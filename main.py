@@ -15,7 +15,7 @@ def clean_cache():
         for file in files:
             os.remove(file)
     else:
-        os.mkdir('cache')
+        os.makedirs('cache')
 
 # Opd 2
 
