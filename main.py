@@ -24,8 +24,6 @@ def cache_zip(zip_file_path, cache_dir_path):
     my_zip_file.extractall(cache_dir_path)
 
 
-cache_zip('data.zip', 'cache')
-
 # Opd 3
 
 def cached_files():
@@ -47,4 +45,4 @@ def find_password(list):
             return line.split(' ')[1]
         
         
-clean_cache() 
+print(find_password("password"))
