@@ -7,6 +7,11 @@ import os
 import glob
 import zipfile
 
+# path to
+
+path = os.getcwd()
+
+
 # Opd 1
 
 def clean_cache():
