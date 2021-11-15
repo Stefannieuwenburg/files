@@ -10,7 +10,7 @@ import zipfile
 # path to
 
 path = os.getcwd()
-
+files = glob.glob('cache/*')
 
 # Opd 1
 
