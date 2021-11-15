@@ -18,7 +18,7 @@ def clean_cache():
     if os.path.exists('cache'):
         files = glob.glob('cache/*')
         for file in files:
-            os.remove(file)
+            os.removedirs(file)
     else:
         os.makedirs('cache')
 
