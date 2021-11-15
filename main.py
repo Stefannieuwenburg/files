@@ -35,7 +35,7 @@ def find_password(list):
     files = list
     check_file = []
     for file in files:
-        if 'password' in open(file, 'r').read():
+        if "password" in open(file, 'r').read():
             check_file.append(file)
     lines = open(check_file[0], 'r').readlines()
     for line in lines:
@@ -45,4 +45,4 @@ def find_password(list):
             return line.split(' ')[1]
         
         
-print(find_password("password"))
+print(find_password("password")) # Oeps geen password ??
