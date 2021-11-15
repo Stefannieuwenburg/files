@@ -45,16 +45,15 @@ def cached_files():
 
 # Opd 4
 
-def find_password(cached_folder):
-   for file in cached_folder:
-        txt_file = open(file, "r")
-        for line in txt_file:
-            if "password" in line:
-                password = line[line.find(" ")+1:-1]
-                txt_file.close
-        return password        
+def find_password(cache_folder):
+   for file in cache_folder:
+        with open(file) as check_file:
+            lines = check_file.readlines()
+        for line in lines:
+            if 'password' in line:
+                return line
 
 
 
-
+clean_cache()
 
