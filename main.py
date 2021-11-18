@@ -9,17 +9,15 @@ import zipfile
 # Dir Patch for lost file
 
 dir_path = os.getcwd()
-dir_cashe = 'cache'
-cache_folder = dir_path + '\\cache'
-zip_file = dir_path + '\\data.zip'
+dir_cache = 'cache'
+cache_folder = os.path.join(dir_path ,'cache')
+zip_file = os.path.join(dir_path ,'data.zip')
 
 
 
 # Opd 1
 
 def clean_cache():
-    dir_path = os.getcwd()
-    cache_folder = f'{dir_path}/files/cache';
     if os.path.isdir(cache_folder):
         try:
             shutil.rmtree(cache_folder)
@@ -38,7 +36,7 @@ def cache_zip(zip_file, cache_dir):
 # Opd 3
 
 def cached_files():
-    cache_path_list = [os.path.join(dir_cashe, file)
+    cache_path_list = [os.path.join(dir_cache, file)
     for file
         in os.listdir(cache_folder)]
     return cache_path_list
