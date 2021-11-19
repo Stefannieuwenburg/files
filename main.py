@@ -15,7 +15,7 @@ dir_path = os.getcwd()
 dir_cache = 'cache'
 cache_folder = os.path.join(dir_path ,'cache')
 zip_file = os.path.join(dir_path ,'data.zip')
-d = "dir"
+
 
 
 # Opd 1
@@ -38,7 +38,12 @@ def cache_zip(zip_file, cache_folder):
 # Opd 3
 
 def cached_files():
-    return glob.glob("/files/cache/*.txt")
+    files_list = []
+    path = './files/cache'
+    files = glob.glob(path + '/*')
+    for file in files:
+        files_list.append(os.path.abspath(file))
+    return files_list
        
     
 #Opd 4
