@@ -1,5 +1,7 @@
 __winc_id__ = 'ae539110d03e49ea8738fd413ac44ba8'
 __human_name__ = 'files'
+
+
 # import Module
 
 import os 
@@ -36,8 +38,9 @@ def cache_zip(zip_file, cache_folder):
 # Opd 3
 
 def cached_files():
-    return glob.glob('/files/cache/*')
-
+    list = []
+    for list in glob.glob('/files/cache/*'):
+        return list
 
 # Opd 4
 
@@ -46,11 +49,9 @@ def find_password(cache_folder):
         with open(file) as check_file:
             lines = check_file.readlines()
             for line in lines:
-                if 'password' in line:   
-                    return line
+                if 'password' in line: 
+                     return line[line.find(' ') + 1:]  
+                     
             
-
-
-
 
 
