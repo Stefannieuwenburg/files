@@ -40,8 +40,8 @@ def cache_zip(zip_file, cache_folder):
 # Opd 3
 
 def cached_files():
-    cache_absolute_list = [os.path.join(cache_folder, file) for file in os.listdir(cache_folder)]
-    return cache_absolute_list
+    abs_path_list = [os.path.join(cache_folder, file) for file in os.listdir(cache_folder)]
+    return abs_path_list
 
 
     
