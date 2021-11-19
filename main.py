@@ -15,7 +15,7 @@ dir_path = os.getcwd()
 dir_cache = 'cache'
 cache_folder = os.path.join(dir_path ,'cache')
 zip_file = os.path.join(dir_path ,'data.zip')
-
+d = "dir"
 
 
 # Opd 1
@@ -38,11 +38,10 @@ def cache_zip(zip_file, cache_folder):
 # Opd 3
 
 def cached_files():
-    list = []
-    for list in glob.glob('/files/cache/file?.txt'):
-        return list
-
-# Opd 4
+    return glob.glob("/files/cache/*.txt")
+       
+    
+#Opd 4
 
 def find_password(cache_folder):
    for file in cache_folder:
@@ -50,8 +49,8 @@ def find_password(cache_folder):
             lines = check_file.readlines()
             for line in lines:
                 if 'password' in line: 
-                     return line[line.find(' ') + 1:]  
+                     return line [line.find(' ') + 1:]  
                      
-            
+    
 
 
