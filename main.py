@@ -7,7 +7,7 @@ __human_name__ = 'files'
 import os 
 import shutil
 import zipfile
-import glob
+
 
 # Dir Patch for lost file
 
@@ -27,24 +27,23 @@ def clean_cache():
         except:
             print('Error while deleting directory')
     return os.makedirs(cache_folder)
-        
+
+    
 # Opd 2
 
 def cache_zip(zip_file, cache_folder):
     with zipfile.ZipFile(zip_file, 'r') as data:
         data.extractall(cache_folder)
-    
+        
+
 
 # Opd 3
 
 def cached_files():
-    files_list = []
-    path = './files/cache'
-    files = glob.glob(path + '/*')
-    for file in files:
-        files_list.append(os.path.abspath(file))
-    return files_list
-       
+    cache_absolute_list = [os.path.join(cache_folder, file) for file in os.listdir(cache_folder)]
+    return cache_absolute_list
+
+
     
 #Opd 4
 
@@ -56,6 +55,6 @@ def find_password(cache_folder):
                 if 'password' in line: 
                      return line [line.find(' ') + 1:]  
                      
-    
+  
 
 
