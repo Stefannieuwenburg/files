@@ -5,6 +5,7 @@ __human_name__ = 'files'
 import os 
 import shutil
 import zipfile
+import glob
 
 # Dir Patch for lost file
 
@@ -27,19 +28,15 @@ def clean_cache():
         
 # Opd 2
 
-def cache_zip(zip_file, cache_dir):
-    clean_cache()
+def cache_zip(zip_file, cache_folder):
     with zipfile.ZipFile(zip_file, 'r') as data:
         data.extractall(cache_folder)
-    return(cache_zip(zip_file, cache_dir))
+    
 
 # Opd 3
 
 def cached_files():
-    cache_path_list = [os.path.join(dir_cache, file)
-    for file
-        in os.listdir(cache_folder)]
-    return cache_path_list
+    return glob.glob('/files/cache/*')
 
 
 # Opd 4
@@ -48,9 +45,10 @@ def find_password(cache_folder):
    for file in cache_folder:
         with open(file) as check_file:
             lines = check_file.readlines()
-        for line in lines:
-            if 'password' in line:
-                return line
+            for line in lines:
+                if 'password' in line:   
+                    return line
+            
 
 
 
