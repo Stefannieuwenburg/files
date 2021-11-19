@@ -39,7 +39,7 @@ def cache_zip(zip_file, cache_folder):
 
 def cached_files():
     list = []
-    for list in glob.glob('/files/cache/*'):
+    for list in glob.glob('/files/cache/file?.txt'):
         return list
 
 # Opd 4
