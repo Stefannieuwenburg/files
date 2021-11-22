@@ -14,19 +14,20 @@ import zipfile
 dir_path = os.getcwd()
 dir_cache = 'cache'
 cache_folder = os.path.join(dir_path ,'cache')
-zip_file = os.path.join(dir_path ,'data.zip')
+zip_file = os.path.join(dir_path ,'data.zip')  
+
 
 
 
 # Opd 1
 
 def clean_cache():
-    if os.path.isdir(cache_folder):
+    if os.path.isdir(cache_folder):   
         try:
-            shutil.rmtree(cache_folder)
+            shutil.rmtree(cache_folder)  
         except:
             print('Error while deleting directory')
-    return os.makedirs(cache_folder)
+    return os.makedirs(cache_folder) 
 
     
 # Opd 2
@@ -38,6 +39,14 @@ def cache_zip(zip_file, cache_folder):
 
 
 # Opd 3
+# voorbeeld 1 van opd 3 ad to do: werkt niet met de check??.
+
+# def return_absolute_path():
+#     abs_path_list = []
+#     for file in os.listdir(cache_folder):
+#         create_path = os.path.join(cache_folder, file)
+#         abs_path_list.append(create_path)
+#     return abs_path_list
 
 def cached_files():
     abs_path_list = [os.path.join(cache_folder, file) for file in os.listdir(cache_folder)]
