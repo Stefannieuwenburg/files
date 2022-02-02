@@ -3,14 +3,12 @@ __human_name__ = 'files'
 
 
 # import Module
-
 import os 
 import shutil
 import zipfile
 
 
 # Dir Patch for lost file
-
 dir_path = os.getcwd()
 dir_cache = 'cache'
 cache_folder = os.path.join(dir_path ,'cache')
@@ -20,7 +18,6 @@ zip_file = os.path.join(dir_path ,'data.zip')
 
 
 # Opd 1
-
 def clean_cache():
     if os.path.isdir(cache_folder):   
         try:
@@ -31,7 +28,6 @@ def clean_cache():
 
     
 # Opd 2
-
 def cache_zip(zip_file, cache_folder):
     with zipfile.ZipFile(zip_file, 'r') as data:
         data.extractall(cache_folder)
@@ -55,7 +51,6 @@ def cached_files():
 
     
 #Opd 4
-
 def find_password(file_paths):
     for x in file_paths:
         file = open(x, 'r')
@@ -65,4 +60,14 @@ def find_password(file_paths):
                 return password
   
 
-
+# ook een goed voorbeeld
+# def find_password(cached_files):
+#     found = False
+#     for file in cached_files:
+#         with open(file):
+#             if "password" in open(file).read():
+#                 found = True
+#         return found
+# ​
+# # cached_files = cached_files()   
+# print(find_password(cached_files()))
